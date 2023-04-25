@@ -10,9 +10,9 @@ Welcome to simpleble's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-intro
-simpleble
-examples
+   intro
+   simpleble
+   examples
 
 Indices and tables
 ==================
