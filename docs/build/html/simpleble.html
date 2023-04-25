@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation &mdash; simpleble 0.01 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            simpleble
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Documentation</a><ul>
+<li><a class="reference internal" href="#the-simplebleclient-class">The <code class="docutils literal notranslate"><span class="pre">SimpleBleClient</span></code> class</a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient</span></code></a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.connect"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.connect()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.disconnect"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.getCharacteristics"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.getCharacteristics()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.isConnected"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.isConnected()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.printFoundDevices"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.printFoundDevices()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.readCharacteristic"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.readCharacteristic()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.scan"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.scan()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.searchDevice"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.searchDevice()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.setNotificationCallback"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.setNotificationCallback()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.setScanCallback"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.setScanCallback()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleClient.writeCharacteristic"><code class="docutils literal notranslate"><span class="pre">SimpleBleClient.writeCharacteristic()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-simplebledevice-class">The <code class="docutils literal notranslate"><span class="pre">SimpleBleDevice</span></code> class</a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice</span></code></a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.connect"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.connect()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.disconnect"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.disconnect()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.getCharacteristics"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.getCharacteristics()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.getServices"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.getServices()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.isConnected"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.isConnected()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.printInfo"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.printInfo()</span></code></a></li>
+<li><a class="reference internal" href="#simpleble.SimpleBleDevice.setNotificationCallback"><code class="docutils literal notranslate"><span class="pre">SimpleBleDevice.setNotificationCallback()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-simpleblescandelegate-class">The <code class="docutils literal notranslate"><span class="pre">SimpleBleScanDelegate</span></code> class</a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleScanDelegate"><code class="docutils literal notranslate"><span class="pre">SimpleBleScanDelegate</span></code></a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleScanDelegate.handleDiscovery"><code class="docutils literal notranslate"><span class="pre">SimpleBleScanDelegate.handleDiscovery()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-simpleblenotificationdelegate-class">The <code class="docutils literal notranslate"><span class="pre">SimpleBleNotificationDelegate</span></code> class</a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleNotificationDelegate"><code class="docutils literal notranslate"><span class="pre">SimpleBleNotificationDelegate</span></code></a><ul>
+<li><a class="reference internal" href="#simpleble.SimpleBleNotificationDelegate.handleNotification"><code class="docutils literal notranslate"><span class="pre">SimpleBleNotificationDelegate.handleNotification()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">simpleble</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/simpleble.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading"></a></h1>
+<section id="the-simplebleclient-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">SimpleBleClient</span></code> class<a class="headerlink" href="#the-simplebleclient-class" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simpleble.</span></span><span class="sig-name descname"><span class="pre">SimpleBleClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanCallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notificationCallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class implementation of a simple BLE client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iface</strong> (<em>int</em><em>, </em><em>optional</em>) – The Bluetooth interface on which to make the connection. On Linux, 0 means <cite>/dev/hci0</cite>, 1 means <cite>/dev/hci1</cite> and so on., defaults to 0</p></li>
+<li><p><strong>scanCallback</strong> (<em>function</em><em>, </em><em>optional</em>) – A function handle of the form <code class="docutils literal notranslate"><span class="pre">callback(client,</span> <span class="pre">device,</span> <span class="pre">isNewDevice,</span> <span class="pre">isNewData)</span></code>, where <code class="docutils literal notranslate"><span class="pre">client</span></code> is a handle to the <a class="reference internal" href="#simpleble.SimpleBleClient" title="simpleble.SimpleBleClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient</span></code></a> that invoked the callback and <code class="docutils literal notranslate"><span class="pre">device</span></code> is the detected <a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> object. <code class="docutils literal notranslate"><span class="pre">isNewDev</span></code> is <cite>True</cite> if the device (as identified by its MAC address) has not been seen before by the scanner, and <cite>False</cite> otherwise. <code class="docutils literal notranslate"><span class="pre">isNewData</span></code> is <cite>True</cite> if new or updated advertising data is available, defaults to None</p></li>
+<li><p><strong>notificationCallback</strong> (<em>function</em><em>, </em><em>optional</em>) – A function handle of the form <code class="docutils literal notranslate"><span class="pre">callback(client,</span> <span class="pre">characteristic,</span> <span class="pre">data)</span></code>, where <code class="docutils literal notranslate"><span class="pre">client</span></code> is a handle to the <a class="reference internal" href="#simpleble.SimpleBleClient" title="simpleble.SimpleBleClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient</span></code></a> that invoked the callback, <code class="docutils literal notranslate"><span class="pre">characteristic</span></code> is the notified <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.blte.Characteristic</span></code> object and data is a <cite>bytearray</cite> containing the updated value. Defaults to None</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Attempts to connect client to a given <a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> object and returns a bool indication of the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>device</strong> (<a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><em>SimpleBleDevice</em></a>) – An instance of the device to which we want to connect. Normally acquired by calling <a class="reference internal" href="#simpleble.SimpleBleClient.scan" title="simpleble.SimpleBleClient.scan"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient.scan()</span></code></a> or <a class="reference internal" href="#simpleble.SimpleBleClient.searchDevice" title="simpleble.SimpleBleClient.searchDevice"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient.searchDevice()</span></code></a></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if connection was successful, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.disconnect" title="Permalink to this definition"></a></dt>
+<dd><p>Drops existing connection.
+Note that the current version of the project assumes that the client can be connected to at most one device at a time.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.getCharacteristics">
+<span class="sig-name descname"><span class="pre">getCharacteristics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHnd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHnd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">65535</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.getCharacteristics" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list containing <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> objects for the peripheral. If no arguments are given, will return all characteristics. If startHnd and/or endHnd are given, the list is restricted to characteristics whose handles are within the given range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startHnd</strong> (<em>int</em><em>, </em><em>optional</em>) – Start index, defaults to 1</p></li>
+<li><p><strong>endHnd</strong> (<em>int</em><em>, </em><em>optional</em>) – End index, defaults to 0xFFFF</p></li>
+<li><p><strong>uuids</strong> (<em>list</em><em>, </em><em>optional</em>) – a list of UUID strings, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of returned <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> objects</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.isConnected">
+<span class="sig-name descname"><span class="pre">isConnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.isConnected" title="Permalink to this definition"></a></dt>
+<dd><p>Check to see if client is connected to a device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>True</cite> if connected, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.printFoundDevices">
+<span class="sig-name descname"><span class="pre">printFoundDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.printFoundDevices" title="Permalink to this definition"></a></dt>
+<dd><p>Print all devices discovered during the last scan. Should only be called after a <a class="reference internal" href="#simpleble.SimpleBleClient.scan" title="simpleble.SimpleBleClient.scan"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient.scan()</span></code></a> has been called first.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.readCharacteristic">
+<span class="sig-name descname"><span class="pre">readCharacteristic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characteristic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.readCharacteristic" title="Permalink to this definition"></a></dt>
+<dd><p>Reads the current value of the characteristic identified by either a <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> object <code class="docutils literal notranslate"><span class="pre">characteristic</span></code>, or a UUID string <code class="docutils literal notranslate"><span class="pre">uuid</span></code>. If both are provided, then the characteristic will be read on the basis of the <code class="docutils literal notranslate"><span class="pre">characteristic</span></code> object. A <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.BTLEException.GATT_ERROR</span></code> is raised if no inputs are specified or the requested characteristic was not found.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>characteristic</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code>, optional) – A <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> object, defaults to None</p></li>
+<li><p><strong>uuid</strong> (<em>string</em><em>, </em><em>optional</em>) – A given UUID string, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.BTLEException.GATT_ERROR</span></code>: If no inputs are specified or the requested characteristic was not found.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The value read from the characteristic</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytearray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.scan">
+<span class="sig-name descname"><span class="pre">scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.scan" title="Permalink to this definition"></a></dt>
+<dd><p>Scans for and returns detected nearby devices</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Specify how long (in seconds) the scan should last, defaults to 10.0</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of <a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> objects</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.searchDevice">
+<span class="sig-name descname"><span class="pre">searchDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.searchDevice" title="Permalink to this definition"></a></dt>
+<dd><p>Searches for and returns, given it exists, a <a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> device objects, based on the provided <code class="docutils literal notranslate"><span class="pre">name</span></code> and/or <code class="docutils literal notranslate"><span class="pre">mac</span></code> address. If both a <code class="docutils literal notranslate"><span class="pre">name</span></code> and a <code class="docutils literal notranslate"><span class="pre">mac</span></code> are provided, then the client will only return a device that matches both conditions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Par am name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The “Complete Local Name” Generic Access Attribute (GATT) of the device, defaults to None</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>mac</strong> (<em>str</em><em>, </em><em>optional</em>) – The MAC address of the device, defaults to None</p></li>
+<li><p><strong>timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Specify how long (in seconds) the scan should last, defaults to 10.0. Internally, it serves as an input to the invoked <a class="reference internal" href="#simpleble.SimpleBleClient.scan" title="simpleble.SimpleBleClient.scan"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient.scan()</span></code></a> method.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>AssertionError</strong> – If neither a <code class="docutils literal notranslate"><span class="pre">name</span></code> nor a <code class="docutils literal notranslate"><span class="pre">mac</span></code> inputs have been provided</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> object if search was succesfull, None otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.setNotificationCallback">
+<span class="sig-name descname"><span class="pre">setNotificationCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.setNotificationCallback" title="Permalink to this definition"></a></dt>
+<dd><p>Set the callback function to be executed when a device sends a notification to the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>function</em><em>, </em><em>optional</em>) – A function handle of the form <code class="docutils literal notranslate"><span class="pre">callback(client,</span> <span class="pre">characteristic,</span> <span class="pre">data)</span></code>, where <code class="docutils literal notranslate"><span class="pre">client</span></code> is a handle to the <a class="reference internal" href="#simpleble.SimpleBleClient" title="simpleble.SimpleBleClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient</span></code></a> that invoked the callback, <code class="docutils literal notranslate"><span class="pre">characteristic</span></code> is the notified <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.blte.Characteristic</span></code> object and data is a <cite>bytearray</cite> containing the updated value. Defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.setScanCallback">
+<span class="sig-name descname"><span class="pre">setScanCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.setScanCallback" title="Permalink to this definition"></a></dt>
+<dd><p>Set the callback function to be executed when a device is detected by the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>function</em>) – A function handle of the form <code class="docutils literal notranslate"><span class="pre">callback(client,</span> <span class="pre">device,</span> <span class="pre">isNewDevice,</span> <span class="pre">isNewData)</span></code>, where <code class="docutils literal notranslate"><span class="pre">client</span></code> is a handle to the <a class="reference internal" href="#simpleble.SimpleBleClient" title="simpleble.SimpleBleClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient</span></code></a> that invoked the callback and <code class="docutils literal notranslate"><span class="pre">device</span></code> is the detected <a class="reference internal" href="#simpleble.SimpleBleDevice" title="simpleble.SimpleBleDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleDevice</span></code></a> object. <code class="docutils literal notranslate"><span class="pre">isNewDev</span></code> is <cite>True</cite> if the device (as identified by its MAC address) has not been seen before by the scanner, and <cite>False</cite> otherwise. <code class="docutils literal notranslate"><span class="pre">isNewData</span></code> is <cite>True</cite> if new or updated advertising data is available.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleClient.writeCharacteristic">
+<span class="sig-name descname"><span class="pre">writeCharacteristic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">characteristic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">withResponse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleClient.writeCharacteristic" title="Permalink to this definition"></a></dt>
+<dd><p>Writes the data val (of type str on Python 2.x, byte on 3.x) to the characteristic identified by either a <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> object <code class="docutils literal notranslate"><span class="pre">characteristic</span></code>, or a UUID string <code class="docutils literal notranslate"><span class="pre">uuid</span></code>. If both are provided, then the characteristic will be read on the basis of the <code class="docutils literal notranslate"><span class="pre">characteristic</span></code> object. A <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.BTLEException.GATT_ERROR</span></code> is raised if no inputs are specified or the requested characteristic was not found. If <code class="docutils literal notranslate"><span class="pre">withResponse</span></code> is <cite>True</cite>, the client will await confirmation that the write was successful from the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>val</strong> (<em>str on Python 2.x</em><em>, </em><em>byte on 3.x</em>) – Value to be written in characteristic</p></li>
+<li><p><strong>characteristic</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code>, optional) – A <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> object, defaults to None</p></li>
+<li><p><strong>uuid</strong> (<em>string</em><em>, </em><em>optional</em>) – A given UUID string, defaults to None</p></li>
+<li><p><strong>withResponse</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">withResponse</span></code> is <cite>True</cite>, the client will await confirmation that the write was successful from the device, defaults to False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.BTLEException.GATT_ERROR</span></code>: If no inputs are specified or the requested characteristic was not found.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>True</cite> or <cite>False</cite> indicating success or failure of write operation, in the case that <code class="docutils literal notranslate"><span class="pre">withResponce</span></code> is <cite>True</cite></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="the-simplebledevice-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">SimpleBleDevice</span></code> class<a class="headerlink" href="#the-simplebledevice-class" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simpleble.</span></span><span class="sig-name descname"><span class="pre">SimpleBleDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'public'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rssi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updateCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Peripheral</span></code></p>
+<p>This is a conceptual class representation of a simple BLE device (GATT Server). It is essentially an extended combination of the <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Peripheral</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.ScanEntry</span></code> classes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (class:<cite>simpleble.SimpleBleClient</cite>) – A handle to the <a class="reference internal" href="#simpleble.SimpleBleClient" title="simpleble.SimpleBleClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient</span></code></a> client object that detected the device</p></li>
+<li><p><strong>addr</strong> (<em>str</em><em>, </em><em>optional</em>) – Device MAC address, defaults to None</p></li>
+<li><p><strong>addrType</strong> (<em>str</em><em>, </em><em>optional</em>) – Device address type - one of ADDR_TYPE_PUBLIC or ADDR_TYPE_RANDOM, defaults to ADDR_TYPE_PUBLIC</p></li>
+<li><p><strong>iface</strong> (<em>int</em><em>, </em><em>optional</em>) – Bluetooth interface number (0 = /dev/hci0) used for the connection, defaults to 0</p></li>
+<li><p><strong>data</strong> (<em>list</em><em>, </em><em>optional</em>) – A list of tuples (adtype, description, value) containing the AD type code, human-readable description and value for all available advertising data items, defaults to None</p></li>
+<li><p><strong>rssi</strong> (<em>int</em><em>, </em><em>optional</em>) – Received Signal Strength Indication for the last received broadcast from the device. This is an integer value measured in dB, where 0 dB is the maximum (theoretical) signal strength, and more negative numbers indicate a weaker signal, defaults to 0</p></li>
+<li><p><strong>connectable</strong> (<em>bool</em><em>, </em><em>optional</em>) – <cite>True</cite> if the device supports connections, and <cite>False</cite> otherwise (typically used for advertising ‘beacons’)., defaults to <cite>False</cite></p></li>
+<li><p><strong>updateCount</strong> (<em>int</em><em>, </em><em>optional</em>) – Integer count of the number of advertising packets received from the device so far, defaults to 0</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Attempts to initiate a connection with the device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>True</cite> if connection was successful, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.disconnect" title="Permalink to this definition"></a></dt>
+<dd><p>Drops existing connection to device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.getCharacteristics">
+<span class="sig-name descname"><span class="pre">getCharacteristics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHnd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHnd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">65535</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uuids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.getCharacteristics" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list containing <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> objects for the peripheral. If no arguments are given, will return all characteristics. If startHnd and/or endHnd are given, the list is restricted to characteristics whose handles are within the given range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startHnd</strong> (<em>int</em><em>, </em><em>optional</em>) – Start index, defaults to 1</p></li>
+<li><p><strong>endHnd</strong> (<em>int</em><em>, </em><em>optional</em>) – End index, defaults to 0xFFFF</p></li>
+<li><p><strong>uuids</strong> (<em>list</em><em>, </em><em>optional</em>) – a list of UUID strings, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of returned <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Characteristic</span></code> objects</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.getServices">
+<span class="sig-name descname"><span class="pre">getServices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.getServices" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.blte.Service</span></code> objects representing the services offered by the device. This will perform Bluetooth service discovery if this has not already been done; otherwise it will return a cached list of services immediately..</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>uuids</strong> (<em>list</em><em>, </em><em>optional</em>) – A list of string service UUIDs to be discovered, defaults to None</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of the discovered <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.blte.Service</span></code> objects, which match the provided <code class="docutils literal notranslate"><span class="pre">uuids</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list On Python 3.x, this returns a dictionary view object, not a list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.isConnected">
+<span class="sig-name descname"><span class="pre">isConnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.isConnected" title="Permalink to this definition"></a></dt>
+<dd><p>Checks to see if device is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>True</cite> if connected, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.printInfo">
+<span class="sig-name descname"><span class="pre">printInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.printInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Print info about device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleDevice.setNotificationCallback">
+<span class="sig-name descname"><span class="pre">setNotificationCallback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleDevice.setNotificationCallback" title="Permalink to this definition"></a></dt>
+<dd><p>Set the callback function to be executed when the device sends a notification to the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>function</em><em>, </em><em>optional</em>) – A function handle of the form <code class="docutils literal notranslate"><span class="pre">callback(client,</span> <span class="pre">characteristic,</span> <span class="pre">data)</span></code>, where <code class="docutils literal notranslate"><span class="pre">client</span></code> is a handle to the <a class="reference internal" href="#simpleble.SimpleBleClient" title="simpleble.SimpleBleClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">simpleble.SimpleBleClient</span></code></a> that invoked the callback, <code class="docutils literal notranslate"><span class="pre">characteristic</span></code> is the notified <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.blte.Characteristic</span></code> object and data is a <cite>bytearray</cite> containing the updated value. Defaults to None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="the-simpleblescandelegate-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">SimpleBleScanDelegate</span></code> class<a class="headerlink" href="#the-simpleblescandelegate-class" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="simpleble.SimpleBleScanDelegate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simpleble.</span></span><span class="sig-name descname"><span class="pre">SimpleBleScanDelegate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleScanDelegate" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultDelegate</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleScanDelegate.handleDiscovery">
+<span class="sig-name descname"><span class="pre">handleDiscovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scanEntry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isNewDevice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isNewData</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleScanDelegate.handleDiscovery" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="the-simpleblenotificationdelegate-class">
+<h2>The <code class="docutils literal notranslate"><span class="pre">SimpleBleNotificationDelegate</span></code> class<a class="headerlink" href="#the-simpleblenotificationdelegate-class" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="simpleble.SimpleBleNotificationDelegate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simpleble.</span></span><span class="sig-name descname"><span class="pre">SimpleBleNotificationDelegate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleNotificationDelegate" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultDelegate</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="simpleble.SimpleBleNotificationDelegate.handleNotification">
+<span class="sig-name descname"><span class="pre">handleNotification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characteristic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simpleble.SimpleBleNotificationDelegate.handleNotification" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Joacb.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
